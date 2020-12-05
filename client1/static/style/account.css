@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&display=swap');
+
+body {
+  padding: 0px;
+  margin: 0px;
+  background:#1e2a38;
+}
+/* Navigation bar setup STARTS */
+.nav {
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+    background: #061323 ;
+    padding: 15px 0px 7px 0px;
+    width: 100%;
+    color: #FFFEFC;
+    font-family: RelayCond, Arial, serif;
+  }
+  #home_icon {
+    text-align: left;
+    position: absolute;
+    margin: 7px 0px 0px 20px;
+    padding: 0px 0px 0px 20px ;
+  }
+
+  .user{
+    float: right;
+    margin: 0px 20px 0px 0px;
+    padding: 3px 3px 3px 3px;
+  }
+
+  .welcome_message {
+    text-align: center;
+  }
+
+  .button_group {
+    margin-top: 5px;
+  }
+
+  .nav_char {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 16px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 15px 0px 15px;
+  }
+  .nav_char:hover{
+    color: #798478;
+  }
+
+  /* Navigation bar setup ENDS */
+
+#userinfo {
+  background:transparent;
+  position: relative;
+  top:100px;
+  text-align: center;
+  font-family: Lato;
+  width: 330px;
+  border-radius: 10px;
+  text-align: center;
+  margin: auto;
+  color: white;
+  font-size: large;
+  font-weight: 500;
+}
+
+#favPodcast-container {
+  color: white;
+  background: transparent;
+  position: relative;
+  top:140px;
+  text-align: center;
+  font-family: Lato, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+#podcast-container {
+  background: transparent;
+  margin: 10px auto 10px auto;
+  color: black;
+  width: 630px;
+  height: 150px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#podcast-image{
+  position: relative;
+  float: left;
+  border-radius: 10% 10% 0 10%;
+  width: 150px;
+  height: 150px;
+}
+#episode-name{
+  font-family: Lato, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  color: #061323;
+  font-weight: 1000;
+  position: relative;
+  float: right;
+  width: 480px;
+  height:100px;
+  margin-top: 50px;
+  background: white;
+  border-radius: 0px 10px 10px 0px;
+  text-transform: none;
+}
+#episode-name-label{
+  color: black;
+  text-align: center;
+  width: 390px;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  padding: 0px;
+  margin-top: auto;
+  vertical-align: center;
+}
+#episode-to-details{
+  background-color: transparent;
+  border-color: transparent;
+  width: 80px;
+  height: 100px;
+  position: relative;
+  float: right;
+  background-color: #061323;
+  color: white;
+  border-radius: 0px 8px 8px 0px;
+  font-weight: 600;
+}

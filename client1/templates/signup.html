@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='style/signin_signup_style.css') }}">
+</head>
+<body>
+    <div class="nav">
+        <a href="{{url_for('search')}}" id="home_icon">
+            <img src="{{ url_for('static', filename='icon.jpeg') }}"
+                alt="Back to search page"
+                width="60%"
+                height="60%">
+        </a>
+    </div>
+
+    <div class="form-container">
+        <!-- Add to send data to sign up -->
+        <form action="{{ url_for('sign_up') }}" method="POST">
+            <h1>Create Account</h1>
+            <div class="social-container">
+                <!-- Add link to sign up with google oauth -->
+                <a href="http://localhost:6313/googlelogin" class="social">
+                    <i class="fab fa-google-plus-g">
+                        <img src="https://cdn.macrumors.com/article-new/2017/02/google_logo1600.jpg?retina" alt="Sign in with Google" width="50" height ="50" >
+                    </i>
+                </a>
+            </div>
+            <span>or use your email for registration</span>
+            <input type="text" placeholder="Full name" name="fullname" required/>
+            <input type="text" placeholder="Username" name="username" required/>
+            <input type="email" placeholder="Email" name="email" required/>
+            <input type="password" placeholder="Password" name="password" required/>
+            <input type="password" placeholder="Confirm password" name="confirm_password" required/>
+            {% if passwordmatch %}
+            <i>Your passwords do not match.</i>
+            {% endif %}
+            <button>Sign Up</button>
+            <br>
+            <a href="{{ url_for('sign_in') }}">Already have an account? Sign in!</a>
+        </form>
+    </div>
+</body>
+</html>

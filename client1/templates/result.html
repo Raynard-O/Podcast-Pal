@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search result</title>
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='style/result.css') }}">
+</head>
+<body>
+    <!-- needs to add log in info at result page -->
+    <div class="nav">
+        <a href="{{url_for('search')}}" id="home_icon">
+            <img src="{{ url_for('static', filename='icon.jpeg') }}"
+                alt="Back to search page"
+                width="60%"
+                height="60%">
+        </a>
+        {% if login_token is none %}
+        <div class="user">
+            <div class="welcome_message">
+                Hello guest user!
+            </div>
+            <div class="button_group">
+                <a href="{{url_for('sign_in')}}"><button class="nav_char">Sign in</button></a>
+                <a href="{{url_for('sign_up')}}"><button class="nav_char">Sign up</button></a>
+            </div>
+        </div>
+        {% else %}
+        <div class="user">
+            <div class="welcome_message">
+                Welcome! {{username}}
+            </div>
+            <div class="button_group">
+                <a href="{{url_for('sign_out')}}" ><button class="nav_char">Sign out</button></a>
+                <a href="{{url_for('account')}}" ><button class="nav_char">Profile</button></a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <div id="keywords">
+        <h2>Search results for: {{keyword}}</h2>
+    </div>
+    <div id="results_layout">
+    {% for result in response['results'] %}
+        <div class="container">
+            <div class="podcast">
+                <h3 class="podcast__episode_title">{{result['title_original']}}</h3>
+                <h5 class="podcast__title">
+                {{result['podcast']['title_original']}}
+                </h5>
+
+                <div class="podcast__meta">
+                <audio controls width="100%" class = "podcast__audio">
+                    <source src="{{result['audio']}}">
+                    Your browser does not support the audio tag.
+                </audio>
+                <form action="{{url_for('podcast_details')}}" method="POST">
+                    <input type="hidden" name="audio" value ="{{result['audio']}}">
+                    <input type="hidden" name="id" value="{{result['id']}}">
+                    <input type="hidden" name="episode_title" value="{{result['title_original']}}">
+                    <input type="hidden" name="podcast_title" value="{{result['podcast']['title_original']}}">
+                    <input type="hidden" name="image" value="{{result['image']}}">
+                    <input type="hidden" name="podcast_id" value="{{result['podcast']['id']}}">
+                    <button class="result_buttons">Summary</button>
+                </form>
+                <!-- The Favorite button will prompt please sign in to add to favorite when the user is not yet signed in -->
+                <form action="{{url_for('favorite')}}" method="POST">
+                    <input type="hidden" name="id" value="{{result['id']}}">
+                    <input type="hidden" name="name" value="{{result['title_original']}}">
+                    <input type="hidden" name="image" value="{{result['image']}}">
+                    <button class="result_buttons">Favorite</button>
+                </form>
+                <a href="#" class="artwork">
+                <img src="{{result['image']}}" alt="">
+                </a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</body>
+</html>

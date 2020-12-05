@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='style/account.css') }}">
+</head>
+<body>
+    <div class="nav">
+        <a href="{{url_for('search')}}" id="home_icon">
+            <img src="{{ url_for('static', filename='icon.jpeg') }}"
+                alt="Back to search page"
+                width="60%"
+                height="60%">
+        </a>
+        {% if login_token is none %}
+        <div class="user">
+            <div class="welcome_message">
+                Hello guest user!
+            </div>
+            <div class="button_group">
+                <a href="{{url_for('sign_in')}}"><button class="nav_char">Sign in</button></a>
+                <a href="{{url_for('sign_up')}}"><button class="nav_char">Sign up</button></a>
+            </div>
+        </div>
+        {% else %}
+        <div class="user">
+            <div class="welcome_message">
+                Welcome! {{username}}
+            </div>
+            <div class="button_group">
+                <a href="{{url_for('sign_out')}}" ><button class="nav_char">Sign out</button></a>
+                <a href="{{url_for('account')}}" ><button class="nav_char">Profile</button></a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    {% if user is defined %}
+    <div id="userinfo">
+        Hello there: {{user['username']}} <br>
+        Your account info: <br>
+        {{user['fullname']}} - {{user['email']}} <br>
+    </div>
+    {% endif %}
+    {% if favPodcast is defined %}
+    <div id="favPodcast-container">
+        <div>
+            Your favorite podcasts:
+        </div>
+        {% if favPodcast is not none %}
+        {% for podcast in favPodcast %}
+        <div id="podcast-container">
+            <img id="podcast-image" src="{{podcast['image_url']}}">
+            <div id="episode-name">
+                <form action="{{ url_for('podcast_details') }}" method="POST">
+                    <input type="hidden" name="podcast_id" value="{{podcast['podid']}}">
+                    <div id="episode-name-label">
+                        {{podcast['name']}}
+                    </div>
+                    <input id="episode-to-details" type="submit" value="Details">
+                </form>
+            </div>
+            <!-- list of podcast: loop for all entries retrieved from the server. -->
+            <!-- If a user clicks on a container div -> redirect to the podcast details page (form?) -->
+        </div>
+        {% endfor %}
+        {% else %}
+        <div id="userinfo">
+            You have saved zero podcast.
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
+</body>
+</html>

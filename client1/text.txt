@@ -1,0 +1,22 @@
+How to uplaod to flask to aws
+
+Log into AWs elastic beanstalk
+
+create new enviroment
+
+make configuration and upload sample application to test enviroment
+
+create a virtual environment on PC( preferable venv or conda)
+
+
+create an application.py file with application = app = Flask(__name__)
+
+pip install all dependency and make sure it works on your local enviroment
+
+pip freeze into requirements.txt to get requirement file updated with dependencies
+
+zip all file (zip ../eb.zip -r * .[^.]*)
+
+upload the zip file to aws and test environment again
+
+https://www.youtube.com/watch?v=P5kGTr2zfn4

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='style/signin_signup_style.css') }}">
+</head>
+<!-- credit to FlorinPop17 https://codepen.io/FlorinPop17/pen/vPKWjd -->
+<body>
+    <div class="nav">
+        <div id="home_icon">
+            <a href="{{url_for('search')}}">
+                <img src="{{ url_for('static', filename='icon.jpeg') }}"
+                    alt="Back to search page"
+                    width="60%"
+                    height="60%">
+            </a>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <!-- Add data to the flask  -->
+        <form action="{{ url_for('sign_in') }}" method = "post">
+            <h1>Sign in</h1>
+            <div class="social-container">
+                <!-- Add page for google OAUTH login -->
+                <a href="http://podcast.ca-central-1.elasticbeanstalk.com/googlelogin" class="social">
+                    <i class="fab fa-google-plus-g">
+                        <img src="https://cdn.macrumors.com/article-new/2017/02/google_logo1600.jpg?retina" alt="Sign in with Google" width="50" height ="50" >
+                    </i>
+                </a>
+            </div>
+            <span>or use your account</span>
+            <input type="text" name = "email_username" placeholder="Email or username" required />
+            <input type="password" name = "password" placeholder="Password" required />
+            <!-- Add retrieve lost password here -->
+            <!-- <a href="#">Forgot your password?</a> -->
+            <button>Sign In</button>
+            <br>
+            <a href="{{ url_for('sign_up') }}">Don't have an account? Sign up!</a>
+        </form>
+    </div>
+</body>
+</html>

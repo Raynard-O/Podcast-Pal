@@ -1,0 +1,6 @@
+backend redirect to ("http://podpal.ca-central-1.elasticbeanstalk.com/guser" + "?user_id=" + Guser.Sub)
+
+frontend picks user_id
+make a post request to (http://podcast.ca-central-1.elasticbeanstalk.com/google/guser) with user_id information
+
+you will receive user detail login details

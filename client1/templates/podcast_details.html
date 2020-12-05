@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast details</title>
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='style/podcast_details.css') }}">
+</head>
+<body>
+
+    <div class="nav">
+        <a href="{{url_for('search')}}" id="home_icon">
+            <img src="{{ url_for('static', filename='icon.jpeg') }}"
+                alt="Back to search page"
+                width="60%"
+                height="60%">
+        </a>
+        {% if login_token is none %}
+        <div class="user">
+            <div class="welcome_message">
+                Hello guest user!
+            </div>
+            <div class="button_group">
+                <a href="{{url_for('sign_in')}}"><button class="nav_char">Sign in</button></a>
+                <a href="{{url_for('sign_up')}}"><button class="nav_char">Sign up</button></a>
+            </div>
+        </div>
+        {% else %}
+        <div class="user">
+            <div class="welcome_message">
+                Welcome! {{login_token}}
+            </div>
+            <div class="button_group">
+                <a href="{{url_for('sign_out')}}" ><button class="nav_char">Sign out</button></a>
+                <a href="{{url_for('account')}}" ><button class="nav_char">Profile</button></a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <!-- Change the input for fields in app.py -->
+    <div class="podcast-player">
+        <div class="container">
+            <div class="podcast">
+                <h3 class="podcast__episode_title">{{podcast['episode']}}</h3>
+                <h5 class="podcast__title">
+                {{podcast['podcast']}}
+                </h5>
+
+                <div class="podcast__meta">
+                <audio controls width="100%" class = "podcast__audio">
+                    <source src="{{podcast['audio']}}">
+                    Your browser does not support the audio tag.
+                </audio>
+                <a href="#" class="artwork">
+                <img src="{{podcast['image']}}" alt="">
+                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="recommender-section">
+        <h3>Recommended podcasts: </h3>
+        <!-- this div has fixed width and will not collapse on small screen. -->
+        <!-- The podcast images are evenly distributed -->
+        {% set rec_pod_1 = rec_podcast_array[0] %}
+        {% set rec_pod_2 = rec_podcast_array[1] %}
+        {% set rec_pod_3 = rec_podcast_array[2] %}
+        <a href="{{rec_pod_1['listennotes_url']}}" title="{{rec_pod_1['title']}}"><img src="{{rec_pod_1['image']}}" alt="recommend podcast 1" width="150" height="150" class="rec-image"></a>
+        <a href="{{rec_pod_2['listennotes_url']}}" title="{{rec_pod_2['title']}}"><img src="{{rec_pod_2['image']}}" alt="recommend podcast 1" width="150" height="150" class="rec-image"></a>
+        <a href="{{rec_pod_3['listennotes_url']}}" title="{{rec_pod_3['title']}}"><img src="{{rec_pod_3['image']}}" alt="recommend podcast 1" width="150" height="150" class="rec-image"></a>
+    </div>
+    <div class="contents">
+        <h1>Podcast summary:</h1>
+        <div id="leftbox">
+            <div class = "transcript">
+                {{transcript}}
+            </div>
+        </div>
+        <div id="rightbox">
+            <div class = "timestamp">
+                {% if timestamp|length != 0 %}
+                <h3>Summarized topics covered in the podcast:</h3>
+                <table class="timestamp-table">
+                    <tr>
+                    <th>Time stamp</th>
+                    <th>Topical sentences</th>
+                    </tr>
+                    {% for item in timestamp %}
+                    <tr>
+                    <td>{{item['time_stamp']}}</td>
+                    <td>{{item['topic']}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

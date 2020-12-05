@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="97dec32e-0fd5-485f-97a9-314f9d682e17" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../PodcastPal-main/backend/.idea/backend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PodcastPal-main/client/.idea/client.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PodcastPal-main/client/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PodcastPal-main/client/requirement.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/checkemail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/ivory-hallway-296414-c2242781fe7f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/key.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/podcastdata.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/response_processor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/static/icon.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/static/index.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/static/js/login_script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/static/js/podcast_details.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/static/style/account.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/static/style/podcast_details.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/static/style/result.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/static/style/search.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/static/style/signin_signup_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/templates/account.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/templates/podcast_details.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/templates/result.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/templates/search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/templates/signin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/templates/signup.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/test.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/topics.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/transcribe.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stat/.idea/stat.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="/usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1kuCyqwhyEStKfRYTD9LgnIe7EM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="438" y="270" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606543269942">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="438" y="270" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1606543269942" />
+  </component>
+</project>
